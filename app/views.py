@@ -4,6 +4,7 @@ from .forms import EncipherForm
 from widgets.cipher import encipher
 
 @application.route('/', methods=['GET','POST'])
+@application.route('/index', methods=['GET', 'POST'])
 def index():
     form = EncipherForm()
     enciphered_text = None

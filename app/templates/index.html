@@ -2,19 +2,20 @@
 <html>
     <head>
         <title>CS5 Tutorial</title>
+        
     </head>
     <body>
         <form action="" method="post" name="encipher">
             {{ form.hidden_tag() }}
             Text to encipher: {{ form.input_text }}<br>
             Number of rotations: {{ form.numRotations }}<br>
-            <input type="submit" value="submit">
+            <input type="submit" value="Encipher!">
         </form>
         {% if enciphered_text %}
-        <h3> Here is your enciphered text</h3>
-        <p id="enciphered_text">
-            {{ enciphered_text }}
-        </p>
+            <h3> Here is your enciphered text</h3>
+            <p id="enciphered_text">
+                {{ enciphered_text }}
+            </p>
         {% endif %}
     </body>
 </html>

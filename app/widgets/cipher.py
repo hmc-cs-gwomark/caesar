@@ -34,35 +34,6 @@ def encipher(S,n):
     return list_to_str(L)
 
 #Function #2: Decipher(S)
-#letterscore
-def letterScore(let):
-    """letterScore returns the scrabble score of the given letter (string)
-    """
-    if let in 'aeilnorstu':
-        return 1
-    elif let in 'dg':
-        return 2
-    elif let in 'bcmp':
-        return 3
-    elif let in 'fhvwy':
-        return 4
-    elif let in 'k':
-        return 5
-    elif let in 'jx':
-        return 8
-    elif let in 'qz':
-        return 10
-    else:
-        return 0
-
-#scrabbleScore
-def scrabbleScore(S):
-    """scrabbleScore inputs a string and outputs the scrabble score (int) of the string
-    """
-    if S != '':
-        return letterScore(S[0]) + scrabbleScore(S[1:])
-    else:
-        return 0
 
 #decipher
 def decipher(S):
@@ -105,7 +76,7 @@ def remOne( e, L ):
     """
     if  len(L) == 0:
         return L
-        
+
     elif  L[0] != e:
         return  L[0:1] + remOne( e, L[1:] )
 
@@ -119,7 +90,7 @@ def gensort(L):
         return L
     else:
         return [min(L)] + gensort(remOne(min(L),L))
-    
+
 #Function 5: jscore(S,T)
 def jscore(S,T):
     """inputs two strings, returns the number of letters the two strings have in common
@@ -135,7 +106,7 @@ def jscore(S,T):
 def exact_change(target_amount, L):
     """ inputs a single non-negative integer target_amount and a list of positive integer values L. exact_change returns True if it's possible to create target_amount by adding up some or all of the values in L
     """
-        
+
     if target_amount < 0:
         return False
     elif target_amount == 0:
